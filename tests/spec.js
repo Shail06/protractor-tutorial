@@ -3,7 +3,7 @@ describe('Protractor Demo App', function(){
     var secondNumber = element(by.model('second'));
     var gobutton = element(by.id('gobutton'));
     var result = element(by.binding('latest'));
-    var history = element.all(by.repeater('result in memory'));
+    var history = element.all(by.repeater('result in memory')); // This returns the ElementArrayFinder type which has methods to manipulate data
 
     beforeEach(function(){
         browser.get('http://juliemr.github.io/protractor-demo/');
@@ -37,6 +37,9 @@ describe('Protractor Demo App', function(){
         add(2, 3);
 
         expect(history.count()).toEqual(2);
+
+        expect(history.last().getText()).toContain('1 + 2');
+        expect(history.first().getText()).toContain('2 + 3');
     });
 
 });
