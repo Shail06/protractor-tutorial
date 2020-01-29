@@ -1,6 +1,9 @@
 ## Protractor Tutorial
 ---
-Aim: To create test framwork using Protractor tool 
+***Aim:*** *To create test framwork using Protractor tool* 
+
+Protractor expects Angular to be present on a page, so it will throw an error if the page it is attempting to load does not contain the Angular library.
+
 ### Steps to Initialize the project
 
 **Step-1**: Create project directory & Initialize as Node Project
